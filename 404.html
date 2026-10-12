@@ -14,96 +14,73 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main" data-es="Saltar al contenido" data-zh="跳到主要内容">Saltar al contenido</a>
+<a class="skip" href="#contenido" data-es="Saltar al contenido" data-zh="跳到主要内容">Saltar al contenido</a>
 
-<header class="site-header">
-  <div class="banda"></div>
-  <div class="container header-in">
-    <a class="brand" href="index.html">
-      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
-        <rect x="1" y="1" width="46" height="46" rx="9" fill="#A63A2E"/>
-        <path d="M24 11c5.2 4.2 7.4 8.3 7.4 12.4a7.4 7.4 0 0 1-14.8 0C16.6 19.3 18.8 15.2 24 11z" fill="#F7F1E5"/>
-        <path d="M24 20.5v15" stroke="#C98F22" stroke-width="2" stroke-linecap="round"/>
-        <path d="M24 27l4.4-3.2M24 31.5l-4.4-3.2" stroke="#C98F22" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <span class="brand-text">
-        <strong>SEMCA</strong>
-        <span data-es="Semillas del Cambio" data-zh="变革的种子">Semillas del Cambio</span>
-      </span>
-    </a>
-    <button class="nav-toggle" type="button" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="site-nav" aria-label="Navegación principal">
-      <a href="index.html" data-es="Inicio" data-zh="首页">Inicio</a>
-      <a href="nosotros.html" data-es="Nosotros" data-zh="关于我们">Nosotros</a>
-      <a href="programas.html" data-es="Programas" data-zh="项目">Programas</a>
-      <a href="transparencia.html" data-es="Transparencia" data-zh="透明公示">Transparencia</a>
-      <a href="contacto.html" data-es="Contacto" data-zh="联系我们">Contacto</a>
-      <span class="lang">
-        <button type="button" data-lang="es" aria-pressed="true">ES</button>
-        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
-      </span>
-      <button class="theme-toggle" type="button" aria-label="Cambiar tema" aria-pressed="false">
-        <svg class="ic-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
-        <svg class="ic-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
-      </button>
-    </nav>
-  </div>
-</header>
+<div class="wrapper">
+  <div class="main">
+    <div class="inner">
 
-<main id="main">
-
-  <section class="section">
-    <div class="container">
-      <div class="error-in">
-        <p class="error-code">404</p>
-        <h1 data-es="Esta semilla no germinó" data-zh="这颗种子没有发芽">Esta semilla no germinó</h1>
-        <p class="lead center" data-es="La página que buscas no existe o cambió de dirección. Puedes volver al inicio o escribirnos y te ayudamos a encontrarla." data-zh="你要找的页面不存在或已更改地址。可以返回首页，或给我们留言，我们帮你找到它。">La página que buscas no existe o cambió de dirección. Puedes volver al inicio o escribirnos y te ayudamos a encontrarla.</p>
-        <p style="margin-top:26px">
-          <a class="btn btn--rojo" href="index.html" data-es="Volver al inicio" data-zh="返回首页">Volver al inicio</a>
-          <a class="btn btn--line" href="contacto.html" data-es="Escribirnos" data-zh="联系我们">Escribirnos</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="banda banda--gruesa"></div>
-  <div class="container" style="padding-top:38px">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-marca">
-          <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
-            <rect x="1" y="1" width="46" height="46" rx="9" fill="#C98F22"/>
-            <path d="M24 11c5.2 4.2 7.4 8.3 7.4 12.4a7.4 7.4 0 0 1-14.8 0C16.6 19.3 18.8 15.2 24 11z" fill="#2B2118"/>
-            <path d="M24 20.5v15" stroke="#FFFDF6" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-          <strong>SEMCA</strong>
+      <header class="site-head">
+        <a class="brand" href="index.html">
+          <b>SEMCA</b>
+          <span data-es="Semillas del Cambio" data-zh="变革的种子">Semillas del Cambio</span>
+        </a>
+        <div class="controls">
+          <span class="lang">
+            <button type="button" data-lang="es" aria-pressed="true">ES</button>
+            <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+          </span>
+          <button class="theme-toggle" type="button" aria-label="Cambiar tema" aria-pressed="false">
+            <svg class="ic-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
+            <svg class="ic-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+          </button>
         </div>
-        <p data-es="Semillas del Cambio — primera infancia, salud y educación en Tiquipaya, Cochabamba (Bolivia)." data-zh="变革的种子 —— 在玻利维亚科恰班巴蒂基帕亚开展幼儿早期发展、健康与教育工作。">Semillas del Cambio — primera infancia, salud y educación en Tiquipaya, Cochabamba (Bolivia).</p>
-      </div>
-      <div>
-        <h4 data-es="Secciones" data-zh="网站导航">Secciones</h4>
-        <a href="index.html" data-es="Inicio" data-zh="首页">Inicio</a>
-        <a href="nosotros.html" data-es="Nosotros" data-zh="关于我们">Nosotros</a>
-        <a href="programas.html" data-es="Programas" data-zh="项目">Programas</a>
-        <a href="transparencia.html" data-es="Transparencia" data-zh="透明公示">Transparencia</a>
-        <a href="contacto.html" data-es="Contacto" data-zh="联系我们">Contacto</a>
-      </div>
-      <div>
-        <h4 data-es="Contacto" data-zh="联系方式">Contacto</h4>
-        <a href="tel:+5914311511">+591 4 311511</a>
-        <a href="tel:+59170724456">+591 70724456</a>
-        <a href="contacto.html" data-es="Formulario de contacto" data-zh="在线留言">Formulario de contacto</a>
-      </div>
-    </div>
-    <div class="footer-fin">
-      <span>© <span data-anio>2026</span> SEMCA — <span data-es="Semillas del Cambio" data-zh="变革的种子">Semillas del Cambio</span></span>
-      <span data-es="Tiquipaya, Cochabamba, Bolivia" data-zh="玻利维亚 科恰班巴 蒂基帕亚">Tiquipaya, Cochabamba, Bolivia</span>
+      </header>
+
+      <main id="contenido">
+
+        <section>
+          <p class="error-codigo">404</p>
+          <h1 data-es="Esta semilla no germinó" data-zh="这颗种子没有发芽">Esta semilla no germinó</h1>
+          <p class="entradilla" data-es="La página que buscas no existe o cambió de dirección. Puedes volver al inicio o escribirnos y te ayudamos a encontrarla." data-zh="你要找的页面不存在或已更改地址。可以返回首页，或给我们留言，我们帮你找到它。">La página que buscas no existe o cambió de dirección. Puedes volver al inicio o escribirnos y te ayudamos a encontrarla.</p>
+          <p class="acciones">
+            <a class="enlace" href="index.html" data-es="Volver al inicio" data-zh="返回首页">Volver al inicio</a>
+            <a class="enlace" href="contacto.html" data-es="Escribirnos" data-zh="联系我们">Escribirnos</a>
+          </p>
+        </section>
+
+      </main>
+
+      <footer class="site-foot">
+        <p>© <span data-anio>2026</span> SEMCA — <span data-es="Semillas del Cambio" data-zh="变革的种子">Semillas del Cambio</span>. <span data-es="Tiquipaya, Cochabamba, Bolivia." data-zh="玻利维亚 科恰班巴 蒂基帕亚。">Tiquipaya, Cochabamba, Bolivia.</span></p>
+        <p data-es="Diseño basado en la plantilla «Editorial» de HTML5 UP (CCA 3.0), reescrita sin dependencias." data-zh="版式参考 HTML5 UP 的「Editorial」模板（CCA 3.0），已重写为零依赖版本。">Diseño basado en la plantilla «Editorial» de HTML5 UP (CCA 3.0), reescrita sin dependencias.</p>
+      </footer>
+
     </div>
   </div>
-</footer>
+
+  <aside class="sidebar">
+    <nav aria-label="Navegación principal">
+      <h4 data-es="Secciones" data-zh="网站导航">Secciones</h4>
+      <ul>
+        <li><a href="index.html" data-es="Inicio" data-zh="首页">Inicio</a></li>
+        <li><a href="nosotros.html" data-es="Nosotros" data-zh="关于我们">Nosotros</a></li>
+        <li><a href="programas.html" data-es="Programas" data-zh="项目">Programas</a></li>
+        <li><a href="transparencia.html" data-es="Transparencia" data-zh="透明公示">Transparencia</a></li>
+        <li><a href="contacto.html" data-es="Contacto" data-zh="联系我们">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="bloque">
+      <h4 data-es="Contacto" data-zh="联系方式">Contacto</h4>
+      <dl>
+        <dt data-es="Teléfonos" data-zh="电话">Teléfonos</dt>
+        <dd><a href="tel:+5914311511">+591 4 311511</a><br><a href="tel:+59170724456">+591 70724456</a></dd>
+      </dl>
+    </div>
+  </aside>
+
+</div>
 
 <script src="js/main.js"></script>
 </body>

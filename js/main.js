@@ -2,13 +2,15 @@
 (function () {
   "use strict";
 
+  var raiz = document.documentElement;
+
   /* ---------- Bilingüe ES / 中文 ---------- */
   var LANG_KEY = "semca-lang";
   var langBtns = document.querySelectorAll("[data-lang]");
 
   function setLang(lang) {
     if (lang !== "es" && lang !== "zh") lang = "es";
-    document.documentElement.setAttribute("lang", lang === "zh" ? "zh-Hans" : "es");
+    raiz.setAttribute("lang", lang === "zh" ? "zh-Hans" : "es");
 
     document.querySelectorAll("[data-es]").forEach(function (el) {
       var txt = el.getAttribute("data-" + lang);
@@ -18,7 +20,6 @@
 
     langBtns.forEach(function (b) {
       var on = b.getAttribute("data-lang") === lang;
-      b.classList.toggle("is-active", on);
       b.setAttribute("aria-pressed", on ? "true" : "false");
     });
 
@@ -35,70 +36,8 @@
     });
   });
 
-  /* ---------- Navegación móvil ---------- */
-  var toggle = document.querySelector(".nav-toggle");
-  var nav = document.querySelector(".site-nav");
-  if (toggle && nav) {
-    toggle.addEventListener("click", function () {
-      var open = nav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-    nav.addEventListener("click", function (e) {
-      if (e.target.tagName === "A" && nav.classList.contains("is-open")) {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-      }
-    });
-  }
-
-  /* ---------- Marcar enlace activo ---------- */
-  var aqui = location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll(".site-nav a").forEach(function (a) {
-    var href = a.getAttribute("href");
-    if (href === aqui || (aqui === "" && href === "index.html")) {
-      a.classList.add("is-current");
-      a.setAttribute("aria-current", "page");
-    }
-  });
-
-  /* ---------- Aparición al hacer scroll ---------- */
-  var reveals = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window && reveals.length) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) {
-          en.target.classList.add("is-in");
-          io.unobserve(en.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    reveals.forEach(function (el) { io.observe(el); });
-  } else {
-    reveals.forEach(function (el) { el.classList.add("is-in"); });
-  }
-
-  /* ---------- Formulario de contacto (estático) ---------- */
-  var form = document.querySelector("#form-contacto");
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var aviso = document.querySelector(".form-aviso");
-      if (aviso) {
-        aviso.classList.add("is-visible");
-        aviso.setAttribute("role", "status");
-      }
-      form.reset();
-    });
-  }
-
-  /* ---------- Año del pie ---------- */
-  document.querySelectorAll("[data-anio]").forEach(function (el) {
-    el.textContent = new Date().getFullYear();
-  });
-
   /* ---------- Tema claro / oscuro ---------- */
   var THEME_KEY = "semca-theme";
-  var raiz = document.documentElement;
 
   function aplicarTema(t) {
     if (t !== "dark" && t !== "light") t = "light";
@@ -126,6 +65,34 @@
       try { localStorage.setItem(THEME_KEY, nuevo); } catch (e) {}
     });
   }
+
+  /* ---------- Marcar la sección actual ---------- */
+  var aqui = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".sidebar nav a").forEach(function (a) {
+    var href = a.getAttribute("href");
+    if (href === aqui || (aqui === "" && href === "index.html")) {
+      a.setAttribute("aria-current", "page");
+    }
+  });
+
+  /* ---------- Formulario de contacto (demostración estática) ---------- */
+  var form = document.querySelector("#form-contacto");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var aviso = document.querySelector(".aviso");
+      if (aviso) {
+        aviso.classList.add("visible");
+        aviso.setAttribute("role", "status");
+      }
+      form.reset();
+    });
+  }
+
+  /* ---------- Año del pie ---------- */
+  document.querySelectorAll("[data-anio]").forEach(function (el) {
+    el.textContent = new Date().getFullYear();
+  });
 
   /* ---------- PWA: registro del service worker ---------- */
   if ("serviceWorker" in navigator && /^https?:$/.test(location.protocol)) {
