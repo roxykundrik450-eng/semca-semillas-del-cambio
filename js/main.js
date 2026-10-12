@@ -4,38 +4,6 @@
 
   var raiz = document.documentElement;
 
-  /* ---------- Bilingüe ES / 中文 ---------- */
-  var LANG_KEY = "semca-lang";
-  var langBtns = document.querySelectorAll("[data-lang]");
-
-  function setLang(lang) {
-    if (lang !== "es" && lang !== "zh") lang = "es";
-    raiz.setAttribute("lang", lang === "zh" ? "zh-Hans" : "es");
-
-    document.querySelectorAll("[data-es]").forEach(function (el) {
-      var txt = el.getAttribute("data-" + lang);
-      if (txt === null) txt = el.getAttribute("data-es");
-      if (txt !== null) el.textContent = txt;
-    });
-
-    langBtns.forEach(function (b) {
-      var on = b.getAttribute("data-lang") === lang;
-      b.setAttribute("aria-pressed", on ? "true" : "false");
-    });
-
-    try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
-  }
-
-  var guardado = "es";
-  try { guardado = localStorage.getItem(LANG_KEY) || "es"; } catch (e) {}
-  setLang(guardado);
-
-  langBtns.forEach(function (b) {
-    b.addEventListener("click", function () {
-      setLang(b.getAttribute("data-lang"));
-    });
-  });
-
   /* ---------- Tema claro / oscuro ---------- */
   var THEME_KEY = "semca-theme";
 

@@ -1,8 +1,11 @@
 # SEMCA — Semillas del Cambio · sitio web
 
-Sitio estático bilingüe (ES / 中文) para **SEMCA — Semillas del Cambio**, organización
+Sitio estático en español para **SEMCA — Semillas del Cambio**, organización
 sin fines de lucro de Tiquipaya, Cochabamba (Bolivia). Trabaja en **primera infancia**,
 **salud materno-infantil**, **protección de la niñez** y **educación**.
+
+> El sitio es **solo en español**. Antes tenía un conmutador ES/中文 que se retiró: la
+> organización trabaja en Bolivia y el chino no le sirve a su público.
 
 ## Diseño
 
@@ -54,7 +57,8 @@ RUE 60900057, Av. Chilimarca, Tiquipaya, 98 estudiantes).
 | `contacto.html` | Datos de contacto, formulario, mapa OpenStreetMap |
 | `404.html` | Página de error |
 | `css/style.css` | Tokens, maqueta editorial, tema oscuro, impresión |
-| `js/main.js` | Bilingüe ES/中文, tema, formulario, año, PWA |
+| `js/main.js` | Tema, sección activa, formulario, año, PWA |
+| `img/` | Fotografías (ver Créditos) |
 | `manifest.webmanifest` · `sw.js` | PWA: instalable y con soporte sin conexión |
 | `icono.svg` · `icono-maskable.svg` | Iconos de la aplicación |
 | `sitemap.xml` · `robots.txt` | SEO |
@@ -66,12 +70,6 @@ HTML5 + CSS3 (custom properties) + JavaScript vanilla.
 
 ## Funciones
 
-- **Bilingüe ES / 中文** — todo el texto vive en atributos `data-es` / `data-zh`. El botón
-  **ES / 中文** intercambia `textContent` y guarda la preferencia en `localStorage`
-  (`semca-lang`). Para añadir un idioma basta con agregar `data-<código>` y sumar el botón
-  en `.lang`.
-  > **Importante:** no pongas `data-es` en un elemento que contenga otros elementos con
-  > `data-es`. Como el script reemplaza `textContent`, los hijos se perderían.
 - **PWA sin conexión** — `manifest.webmanifest` + `sw.js`. El sitio se puede instalar y
   sigue funcionando sin internet: navegación *network-first*, recursos *cache-first*.
   Al cambiar el contenido, sube `VERSION` en `sw.js` para invalidar la caché.
@@ -82,8 +80,6 @@ HTML5 + CSS3 (custom properties) + JavaScript vanilla.
   activa, estilos `:focus-visible`, contraste cuidado en ambos temas.
 - **SEO y compartir** — Open Graph, `twitter:card`, JSON-LD (`schema.org/NGO`), sitemap
   y robots.
-- **Tipografía china** — la capitular y la cursiva se desactivan cuando el idioma es
-  chino (`html[lang="zh-Hans"]`), porque en caracteres CJK se sintetizan mal.
 - **Impresión** — hoja de estilos para imprimir sin barra lateral, controles ni mapa.
 
 ## Paleta
@@ -111,10 +107,12 @@ dominio final es otro.
 
 ## Pendientes antes de publicar
 
-1. **Fotografías** — es lo que más falta. El sitio es hoy puramente tipográfico y hay
-   marcadores visibles (`class="hueco"`) donde deberían ir fotos reales de la escuela,
-   el huerto y las jornadas con las familias. No se usan fotos de archivo de otras
-   personas: en una organización real eso sería engañoso.
+1. **Fotografías propias** — las que hay ahora son de archivo, con licencia libre, y son
+   **de lugares, no de personas**: la cordillera del Tunari, la iglesia de Tiquipaya, un
+   mercado del valle y la plaza de Quillacollo. Es deliberado: poner fotos de niñas y
+   niños ajenos en el sitio de una organización real haría creer que son sus
+   beneficiarios. Cuando la organización tenga fotos propias (la escuela, el huerto, las
+   jornadas), hay que sustituirlas.
 2. **Correo institucional** — se retiró `contacto@semca.org.bo` porque ese dominio no
    existe. Falta añadir el correo real (ver comentario `TODO` en `contacto.html`).
 3. **Formulario** — sigue siendo una demostración estática (solo muestra el aviso).
@@ -133,3 +131,16 @@ dominio final es otro.
 - Maqueta: [Editorial](https://html5up.net/editorial) de [HTML5 UP](https://html5up.net),
   [CCA 3.0](https://html5up.net/license). Reescrita sin dependencias.
 - Mapa: © colaboradores de [OpenStreetMap](https://www.openstreetmap.org/copyright).
+- Fotografías, todas de [Wikimedia Commons](https://commons.wikimedia.org) y
+  redimensionadas para la web (los recortes de encuadre los hace el navegador con
+  `object-fit`, los archivos no están alterados):
+
+  | Archivo | Foto | Autor | Licencia |
+  |---|---|---|---|
+  | `img/tunari.jpg` | [Cordillera del Tunari, Cochabamba](https://commons.wikimedia.org/wiki/File:Cordillera_del_Tunari_Cochabamba.jpg) | Nelson Antequera | CC BY-SA 4.0 |
+  | `img/tiquipaya.jpg` | [Iglesia San Miguel, Tiquipaya](https://commons.wikimedia.org/wiki/File:Iglesia_san_miguel_tiquipaya_64.jpg) | AldoNuñezC. | CC BY-SA 4.0 |
+  | `img/mercado.jpg` | [Mercado de Punata, Bolivia](https://commons.wikimedia.org/wiki/File:Vista_general_de_un_puesto_de_verduras_en_el_mercado_de_Punata,_Bolivia.png) | AlissCh | CC BY 4.0 |
+  | `img/quillacollo.jpg` | [Plaza Bolívar, Quillacollo](https://commons.wikimedia.org/wiki/File:Quillacollo,_Plaza_Bolivar.JPG) | Willaq | CC BY-SA 4.0 |
+
+  Las licencias CC BY y CC BY-SA exigen mantener el reconocimiento: **si se sustituye una
+  foto, hay que actualizar también el pie de foto en la página y esta tabla.**

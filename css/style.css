@@ -157,13 +157,8 @@ h4{
   padding:.06em .1em 0 0;color:var(--acento);font-weight:600;
 }
 
-/* Ajustes de tipografía china: la cursiva y la capitular se sintetizan mal
-   en caracteres CJK, así que se desactivan cuando el idioma es chino. */
-html[lang="zh-Hans"] .capitular::first-letter{
-  float:none;font-size:inherit;color:inherit;font-weight:inherit;padding:0;
-}
-html[lang="zh-Hans"] .cita{font-style:normal}
-html[lang="zh-Hans"] .entradilla{font-size:1.14rem}
+/* El sitio es solo en español: no hay conmutador de idioma ni reglas
+   específicas para otras escrituras. */
 
 /* ==========================================================================
    Secciones
@@ -232,8 +227,13 @@ section > h2 + .entradilla{margin-top:1.2rem}
    ========================================================================== */
 
 figure{margin:2rem 0}
-figure img{width:100%;height:auto;border-radius:var(--radio)}
-figcaption{font-family:var(--sans);font-size:.8rem;color:var(--tinta-3);margin-top:.6rem}
+figure img{width:100%;height:auto;border-radius:var(--radio);background:var(--papel-2)}
+figcaption{font-family:var(--sans);font-size:.8rem;color:var(--tinta-3);margin-top:.6rem;line-height:1.5}
+
+/* Imagen de apertura: ocupa el ancho de la columna con proporción fija.
+   El recorte lo hace el navegador (object-fit), el archivo no se altera. */
+figure.destacada{margin:0 0 2.6rem}
+figure.destacada img{aspect-ratio:16/9;object-fit:cover}
 
 /* Marcador de posición para fotos propias: no simula una imagen. */
 .hueco{
