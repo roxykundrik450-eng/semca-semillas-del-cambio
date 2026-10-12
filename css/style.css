@@ -235,6 +235,27 @@ figcaption{font-family:var(--sans);font-size:.8rem;color:var(--tinta-3);margin-t
 figure.destacada{margin:0 0 2.6rem}
 figure.destacada img{aspect-ratio:16/9;object-fit:cover}
 
+/* ---------- Galería ---------- */
+.galeria{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin:1.8rem 0 0}
+.galeria figure{margin:0}
+.galeria img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radio);background:var(--papel-2)}
+.galeria figcaption{font-size:.76rem;margin-top:.45rem}
+.galeria--tres{grid-template-columns:repeat(3,1fr)}
+
+/* ---------- Preguntas frecuentes ---------- */
+.faq{border-top:1px solid var(--regla-fina);margin-top:1.6rem}
+.faq details{border-bottom:1px solid var(--regla-fina)}
+.faq summary{
+  cursor:pointer;padding:1.05rem 0;font-weight:600;font-size:1.02rem;
+  list-style:none;display:flex;gap:.85rem;align-items:baseline;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+";color:var(--acento);font-weight:700;flex:none;width:.9rem}
+.faq details[open] summary::before{content:"–"}
+.faq summary:hover{color:var(--acento)}
+.faq .respuesta{padding:0 0 1.3rem 1.75rem;color:var(--tinta-2);font-size:.97rem}
+.faq .respuesta p:last-child,.faq .respuesta ul:last-child{margin-bottom:0}
+
 /* Marcador de posición para fotos propias: no simula una imagen. */
 .hueco{
   border:1px dashed var(--regla);border-radius:var(--radio);

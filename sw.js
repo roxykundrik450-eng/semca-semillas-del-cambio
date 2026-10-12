@@ -5,12 +5,15 @@
    · Sin conexión→ respaldo desde caché; si falta, página offline.
    Al cambiar el contenido del sitio, sube VERSION para invalidar la caché anterior. */
 
-var VERSION = "semca-v3";
+var VERSION = "semca-v4";
 var SHELL = [
   "./",
   "./index.html",
   "./nosotros.html",
   "./programas.html",
+  "./actualidad.html",
+  "./preguntas.html",
+  "./ayudar.html",
   "./transparencia.html",
   "./contacto.html",
   "./404.html",
@@ -20,6 +23,10 @@ var SHELL = [
   "./img/tiquipaya.jpg",
   "./img/mercado.jpg",
   "./img/quillacollo.jpg",
+  "./img/cochabamba.jpg",
+  "./img/liriuni.jpg",
+  "./img/textil.jpg",
+  "./img/atardecer.jpg",
   "./manifest.webmanifest",
   "./icono.svg",
   "./icono-maskable.svg"

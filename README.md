@@ -50,18 +50,25 @@ RUE 60900057, Av. Chilimarca, Tiquipaya, 98 estudiantes).
 
 | Archivo | Contenido |
 |---|---|
-| `index.html` | Inicio — titular, líneas de trabajo, actividades del año, registro, cómo acompañar |
-| `nosotros.html` | Misión, visión, espacios, principios, datos legales |
+| `index.html` | Inicio — titular, quiénes somos, líneas de trabajo, últimas actividades, galería, registro, cómo ayudar |
+| `nosotros.html` | Misión, visión, principios, espacios, aliados, datos legales |
 | `programas.html` | Los seis programas + cómo inscribirse |
-| `transparencia.html` | Ficha del registro oficial, compromisos, articulación, verificación |
-| `contacto.html` | Datos de contacto, formulario, mapa OpenStreetMap |
+| `actualidad.html` | Archivo de actividades del año |
+| `preguntas.html` | Preguntas frecuentes (programas, inscripción, organización, cómo ayudar) |
+| `ayudar.html` | Voluntariado, donaciones, donaciones en especie, colaboración institucional |
+| `transparencia.html` | Ficha del registro oficial, qué se publica y qué falta, compromisos, verificación |
+| `contacto.html` | Datos de contacto, formulario, ubicación y mapa OpenStreetMap |
 | `404.html` | Página de error |
-| `css/style.css` | Tokens, maqueta editorial, tema oscuro, impresión |
+| `css/style.css` | Tokens, maqueta editorial, galería, FAQ, tema oscuro, impresión |
 | `js/main.js` | Tema, sección activa, formulario, año, PWA |
 | `img/` | Fotografías (ver Créditos) |
 | `manifest.webmanifest` · `sw.js` | PWA: instalable y con soporte sin conexión |
 | `icono.svg` · `icono-maskable.svg` | Iconos de la aplicación |
 | `sitemap.xml` · `robots.txt` | SEO |
+
+> **Nota de mantenimiento:** el menú lateral, el bloque de contacto y el pie están repetidos
+> en las nueve páginas. Si cambia una sección del menú o un teléfono, hay que actualizarlo
+> en todas. Es el precio de no tener build; se revisa con una búsqueda de texto.
 
 ## Stack
 
@@ -80,6 +87,8 @@ HTML5 + CSS3 (custom properties) + JavaScript vanilla.
   activa, estilos `:focus-visible`, contraste cuidado en ambos temas.
 - **SEO y compartir** — Open Graph, `twitter:card`, JSON-LD (`schema.org/NGO`), sitemap
   y robots.
+- **Galería** — rejilla de dos columnas con proporción fija; el recorte lo hace `object-fit`.
+- **Preguntas frecuentes** — `<details>/<summary>` nativos, sin JavaScript.
 - **Impresión** — hoja de estilos para imprimir sin barra lateral, controles ni mapa.
 
 ## Paleta
@@ -141,6 +150,10 @@ dominio final es otro.
   | `img/tiquipaya.jpg` | [Iglesia San Miguel, Tiquipaya](https://commons.wikimedia.org/wiki/File:Iglesia_san_miguel_tiquipaya_64.jpg) | AldoNuñezC. | CC BY-SA 4.0 |
   | `img/mercado.jpg` | [Mercado de Punata, Bolivia](https://commons.wikimedia.org/wiki/File:Vista_general_de_un_puesto_de_verduras_en_el_mercado_de_Punata,_Bolivia.png) | AlissCh | CC BY 4.0 |
   | `img/quillacollo.jpg` | [Plaza Bolívar, Quillacollo](https://commons.wikimedia.org/wiki/File:Quillacollo,_Plaza_Bolivar.JPG) | Willaq | CC BY-SA 4.0 |
+  | `img/cochabamba.jpg` | [Panorama urbano con el Cerro Tunari](https://commons.wikimedia.org/wiki/File:Panorama_urbano_con_el_Cerro_Tunari,_Cochabamba.jpg) | Rolando Claure | CC BY-SA 4.0 |
+  | `img/liriuni.jpg` | [Liriuni, Cochabamba](https://commons.wikimedia.org/wiki/File:Liriuni_Cochabamba_Bolivia.jpg) | Sisace | CC BY-SA 4.0 |
+  | `img/textil.jpg` | [Tejido andino (tari)](https://commons.wikimedia.org/wiki/File:Tari_textil_Aymara.jpg) | Jhulis | CC BY-SA 4.0 |
+  | `img/atardecer.jpg` | [Atardecer sobre la serranía del Tunari](https://commons.wikimedia.org/wiki/File:Atardecer_con_el_forndo_de_la_Cerro_y_la_Serran%C3%ADa_del_Tunari_en_Cochabamba.jpg) | MollySVH | CC BY 2.0 |
 
   Las licencias CC BY y CC BY-SA exigen mantener el reconocimiento: **si se sustituye una
   foto, hay que actualizar también el pie de foto en la página y esta tabla.**
