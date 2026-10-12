@@ -1,0 +1,28 @@
+{
+  "name": "SEMCA — Semillas del Cambio",
+  "short_name": "SEMCA",
+  "description": "Primera infancia, salud materno-infantil y protección de la niñez en Tiquipaya, Cochabamba (Bolivia).",
+  "lang": "es",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F7F1E5",
+  "theme_color": "#A63A2E",
+  "categories": ["education", "health", "social"],
+  "icons": [
+    {
+      "src": "icono.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icono-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

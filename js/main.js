@@ -57,6 +57,7 @@
     var href = a.getAttribute("href");
     if (href === aqui || (aqui === "" && href === "index.html")) {
       a.classList.add("is-current");
+      a.setAttribute("aria-current", "page");
     }
   });
 
@@ -94,4 +95,42 @@
   document.querySelectorAll("[data-anio]").forEach(function (el) {
     el.textContent = new Date().getFullYear();
   });
+
+  /* ---------- Tema claro / oscuro ---------- */
+  var THEME_KEY = "semca-theme";
+  var raiz = document.documentElement;
+
+  function aplicarTema(t) {
+    if (t !== "dark" && t !== "light") t = "light";
+    raiz.setAttribute("data-theme", t);
+    var b = document.querySelector(".theme-toggle");
+    if (b) {
+      b.setAttribute("aria-pressed", t === "dark" ? "true" : "false");
+      b.setAttribute("title", t === "dark" ? "Tema claro" : "Tema oscuro");
+    }
+  }
+
+  var temaGuardado = null;
+  try { temaGuardado = localStorage.getItem(THEME_KEY); } catch (e) {}
+  if (temaGuardado === "dark" || temaGuardado === "light") {
+    aplicarTema(temaGuardado);
+  } else {
+    aplicarTema(raiz.getAttribute("data-theme") || "light");
+  }
+
+  var themeBtn = document.querySelector(".theme-toggle");
+  if (themeBtn) {
+    themeBtn.addEventListener("click", function () {
+      var nuevo = raiz.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      aplicarTema(nuevo);
+      try { localStorage.setItem(THEME_KEY, nuevo); } catch (e) {}
+    });
+  }
+
+  /* ---------- PWA: registro del service worker ---------- */
+  if ("serviceWorker" in navigator && /^https?:$/.test(location.protocol)) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("sw.js").catch(function () {});
+    });
+  }
 })();

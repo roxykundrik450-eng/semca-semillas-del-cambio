@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://roxykundrik450-eng.github.io/semca-semillas-del-cambio/sitemap.xml
