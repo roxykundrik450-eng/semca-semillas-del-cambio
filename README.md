@@ -54,6 +54,7 @@ RUE 60900057, Av. Chilimarca, Tiquipaya, 98 estudiantes).
 | `nosotros.html` | Misión, visión, principios, espacios, aliados, datos legales |
 | `programas.html` | Los seis programas + cómo inscribirse |
 | `actualidad.html` | Archivo de actividades del año |
+| `galeria.html` | Galería de imágenes, agrupadas por tema |
 | `preguntas.html` | Preguntas frecuentes (programas, inscripción, organización, cómo ayudar) |
 | `ayudar.html` | Voluntariado, donaciones, donaciones en especie, colaboración institucional |
 | `transparencia.html` | Ficha del registro oficial, qué se publica y qué falta, compromisos, verificación |
@@ -80,6 +81,9 @@ HTML5 + CSS3 (custom properties) + JavaScript vanilla.
 - **PWA sin conexión** — `manifest.webmanifest` + `sw.js`. El sitio se puede instalar y
   sigue funcionando sin internet: navegación *network-first*, recursos *cache-first*.
   Al cambiar el contenido, sube `VERSION` en `sw.js` para invalidar la caché.
+  > El armazón (páginas, CSS, JS, iconos) se precarga al instalar; **las imágenes no**.
+  > Son 3,3 MB y descargarlas todas al instalar sería inaceptable con conexión lenta: se
+  > guardan a medida que se visitan.
 - **Tema claro / oscuro** — sigue `prefers-color-scheme` por defecto y permite cambiarlo
   manualmente; se guarda en `localStorage` (`semca-theme`). Un script inline en el `<head>`
   evita el parpadeo al cargar.
@@ -146,14 +150,24 @@ dominio final es otro.
 
   | Archivo | Foto | Autor | Licencia |
   |---|---|---|---|
-  | `img/tunari.jpg` | [Cordillera del Tunari, Cochabamba](https://commons.wikimedia.org/wiki/File:Cordillera_del_Tunari_Cochabamba.jpg) | Nelson Antequera | CC BY-SA 4.0 |
+  | `img/tunari.jpg` | [Cordillera del Tunari](https://commons.wikimedia.org/wiki/File:Cordillera_del_Tunari_Cochabamba.jpg) | Nelson Antequera | CC BY-SA 4.0 |
+  | `img/atardecer.jpg` | [Atardecer sobre el Tunari](https://commons.wikimedia.org/wiki/File:Atardecer_con_el_forndo_de_la_Cerro_y_la_Serran%C3%ADa_del_Tunari_en_Cochabamba.jpg) | MollySVH | CC BY 2.0 |
+  | `img/valle.jpg` | [Valle de Cochabamba](https://commons.wikimedia.org/wiki/File:Valle_de_Cochabamba.jpg) | Franz Tamayo Daza | CC BY-SA 4.0 |
   | `img/tiquipaya.jpg` | [Iglesia San Miguel, Tiquipaya](https://commons.wikimedia.org/wiki/File:Iglesia_san_miguel_tiquipaya_64.jpg) | AldoNuñezC. | CC BY-SA 4.0 |
-  | `img/mercado.jpg` | [Mercado de Punata, Bolivia](https://commons.wikimedia.org/wiki/File:Vista_general_de_un_puesto_de_verduras_en_el_mercado_de_Punata,_Bolivia.png) | AlissCh | CC BY 4.0 |
+  | `img/tiquipaya2.jpg` | [Iglesia San Miguel, otra vista](https://commons.wikimedia.org/wiki/File:Iglesia_san_miguel_tiquipaya_29.jpg) | AldoNuñezC. | CC BY-SA 4.0 |
   | `img/quillacollo.jpg` | [Plaza Bolívar, Quillacollo](https://commons.wikimedia.org/wiki/File:Quillacollo,_Plaza_Bolivar.JPG) | Willaq | CC BY-SA 4.0 |
-  | `img/cochabamba.jpg` | [Panorama urbano con el Cerro Tunari](https://commons.wikimedia.org/wiki/File:Panorama_urbano_con_el_Cerro_Tunari,_Cochabamba.jpg) | Rolando Claure | CC BY-SA 4.0 |
   | `img/liriuni.jpg` | [Liriuni, Cochabamba](https://commons.wikimedia.org/wiki/File:Liriuni_Cochabamba_Bolivia.jpg) | Sisace | CC BY-SA 4.0 |
+  | `img/cochabamba.jpg` | [Panorama urbano con el Tunari](https://commons.wikimedia.org/wiki/File:Panorama_urbano_con_el_Cerro_Tunari,_Cochabamba.jpg) | Rolando Claure | CC BY-SA 4.0 |
+  | `img/catedral.jpg` | [Catedral Metropolitana de San Sebastián](https://commons.wikimedia.org/wiki/File:Cochabamba_-_Metropolitan_Cathedral_of_Saint_Sebastian_-_20190929213109.jpg) | Pacheco castro fernando | CC BY-SA 4.0 |
+  | `img/plaza14.jpg` | [Plaza Principal 14 de Septiembre](https://commons.wikimedia.org/wiki/File:Plaza_Principal_%E2%80%9C14_de_Septiembre%E2%80%9D,_Cochabamba,_Bolivia_-_16449443750.jpg) | Jan Beck | CC BY 2.0 |
+  | `img/cristo.jpg` | [Cristo de la Concordia](https://commons.wikimedia.org/wiki/File:Cristo_de_la_Concordia_02.jpg) | Jimmy Gilles | CC BY-SA 3.0 |
+  | `img/mercado.jpg` | [Mercado de Punata](https://commons.wikimedia.org/wiki/File:Vista_general_de_un_puesto_de_verduras_en_el_mercado_de_Punata,_Bolivia.png) | AlissCh | CC BY 4.0 |
+  | `img/cancha.jpg` | [Mercado de La Cancha, Cochabamba](https://commons.wikimedia.org/wiki/File:Calle_lanza_mercado_la_cancha_en_Cochabamba.jpg) | BrunoBol | CC BY-SA 4.0 |
+  | `img/cliza.jpg` | [Mercado Central de Cliza](https://commons.wikimedia.org/wiki/File:Mercado_Central_de_Cliza_-_Cochabamba_-_Bolivia_08_-_Pichon.jpg) | Mauri777AE | CC BY-SA 4.0 |
+  | `img/cosecha.jpg` | [Cosecha de trigo y maíz](https://commons.wikimedia.org/wiki/File:Cosecha_de_trigo_y_maiz,_Cochabamba,_2008.jpg) | Ramiro Lizárraga Terrazas | CC BY-SA 4.0 |
+  | `img/tiraque.jpg` | [Tiraque, valle alto](https://commons.wikimedia.org/wiki/File:Tiraque_Cochabamba_01.jpg) | Das Morton | CC BY-SA 4.0 |
+  | `img/adobe.jpg` | [Casas de adobe en Villa Mercedes](https://commons.wikimedia.org/wiki/File:Casas_de_adobe_en_Villa_Mercedes,_Arbieto,_2007.jpg) | Ramiro Lizárraga Terrazas | CC0 |
   | `img/textil.jpg` | [Tejido andino (tari)](https://commons.wikimedia.org/wiki/File:Tari_textil_Aymara.jpg) | Jhulis | CC BY-SA 4.0 |
-  | `img/atardecer.jpg` | [Atardecer sobre la serranía del Tunari](https://commons.wikimedia.org/wiki/File:Atardecer_con_el_forndo_de_la_Cerro_y_la_Serran%C3%ADa_del_Tunari_en_Cochabamba.jpg) | MollySVH | CC BY 2.0 |
 
   Las licencias CC BY y CC BY-SA exigen mantener el reconocimiento: **si se sustituye una
   foto, hay que actualizar también el pie de foto en la página y esta tabla.**

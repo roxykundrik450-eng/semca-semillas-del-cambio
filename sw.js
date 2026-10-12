@@ -5,13 +5,19 @@
    · Sin conexión→ respaldo desde caché; si falta, página offline.
    Al cambiar el contenido del sitio, sube VERSION para invalidar la caché anterior. */
 
-var VERSION = "semca-v4";
+var VERSION = "semca-v6";
+
+/* Solo se precarga el armazón (páginas, estilos, scripts, iconos).
+   Las imágenes NO se precargan: son 3,3 MB y descargarlas todas al instalar
+   sería inaceptable con conexión lenta. El manejador de «fetch» las va
+   guardando a medida que se visitan. */
 var SHELL = [
   "./",
   "./index.html",
   "./nosotros.html",
   "./programas.html",
   "./actualidad.html",
+  "./galeria.html",
   "./preguntas.html",
   "./ayudar.html",
   "./transparencia.html",
@@ -19,14 +25,6 @@ var SHELL = [
   "./404.html",
   "./css/style.css",
   "./js/main.js",
-  "./img/tunari.jpg",
-  "./img/tiquipaya.jpg",
-  "./img/mercado.jpg",
-  "./img/quillacollo.jpg",
-  "./img/cochabamba.jpg",
-  "./img/liriuni.jpg",
-  "./img/textil.jpg",
-  "./img/atardecer.jpg",
   "./manifest.webmanifest",
   "./icono.svg",
   "./icono-maskable.svg"
