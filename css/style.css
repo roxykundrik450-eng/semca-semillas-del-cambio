@@ -242,6 +242,19 @@ figure.destacada img{aspect-ratio:16/9;object-fit:cover}
 .galeria figcaption{font-size:.76rem;margin-top:.45rem}
 .galeria--tres{grid-template-columns:repeat(3,1fr)}
 
+/* ---------- La labor, en imágenes ----------
+   Tira de fotografías de la actividad (archivo). Misma mecánica que la
+   galería, pero con su propio nombre para poder ajustarla sin tocar
+   las vistas del valle. */
+.trabajo{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin:1.8rem 0 0}
+.trabajo--dos{grid-template-columns:repeat(2,1fr)}
+.trabajo figure{margin:0}
+.trabajo img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radio);background:var(--papel-2)}
+.trabajo figcaption{font-size:.76rem;margin-top:.45rem}
+
+/* Marca de honestidad: estas fotos no son de la organización. */
+.archivo{font-style:normal;font-weight:700;color:var(--acento);letter-spacing:.02em}
+
 /* ---------- Preguntas frecuentes ---------- */
 .faq{border-top:1px solid var(--regla-fina);margin-top:1.6rem}
 .faq details{border-bottom:1px solid var(--regla-fina)}
@@ -388,6 +401,7 @@ button.enlace{background:none;border:0;border-bottom:1.5px solid var(--acento);b
   .tabla th{border-bottom:0;padding-bottom:.1rem}
   .tabla td{padding-top:.1rem;padding-bottom:.8rem}
   .brand span{display:none}
+  .trabajo,.trabajo--dos{grid-template-columns:repeat(2,1fr)}
 }
 
 /* ---------- Impresión ---------- */

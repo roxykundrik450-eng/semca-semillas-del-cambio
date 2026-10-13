@@ -5,7 +5,7 @@
    · Sin conexión→ respaldo desde caché; si falta, página offline.
    Al cambiar el contenido del sitio, sube VERSION para invalidar la caché anterior. */
 
-var VERSION = "semca-v6";
+var VERSION = "semca-v7";
 
 /* Solo se precarga el armazón (páginas, estilos, scripts, iconos).
    Las imágenes NO se precargan: son 3,3 MB y descargarlas todas al instalar

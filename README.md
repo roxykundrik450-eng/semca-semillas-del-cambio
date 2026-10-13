@@ -60,7 +60,7 @@ RUE 60900057, Av. Chilimarca, Tiquipaya, 98 estudiantes).
 | `transparencia.html` | Ficha del registro oficial, qué se publica y qué falta, compromisos, verificación |
 | `contacto.html` | Datos de contacto, formulario, ubicación y mapa OpenStreetMap |
 | `404.html` | Página de error |
-| `css/style.css` | Tokens, maqueta editorial, galería, FAQ, tema oscuro, impresión |
+| `css/style.css` | Tokens, maqueta editorial, galería, tira «la labor», FAQ, tema oscuro, impresión |
 | `js/main.js` | Tema, sección activa, formulario, año, PWA |
 | `img/` | Fotografías (ver Créditos) |
 | `manifest.webmanifest` · `sw.js` | PWA: instalable y con soporte sin conexión |
@@ -82,7 +82,7 @@ HTML5 + CSS3 (custom properties) + JavaScript vanilla.
   sigue funcionando sin internet: navegación *network-first*, recursos *cache-first*.
   Al cambiar el contenido, sube `VERSION` en `sw.js` para invalidar la caché.
   > El armazón (páginas, CSS, JS, iconos) se precarga al instalar; **las imágenes no**.
-  > Son 3,3 MB y descargarlas todas al instalar sería inaceptable con conexión lenta: se
+  > Son 3,8 MB y descargarlas todas al instalar sería inaceptable con conexión lenta: se
   > guardan a medida que se visitan.
 - **Tema claro / oscuro** — sigue `prefers-color-scheme` por defecto y permite cambiarlo
   manualmente; se guarda en `localStorage` (`semca-theme`). Un script inline en el `<head>`
@@ -120,12 +120,16 @@ dominio final es otro.
 
 ## Pendientes antes de publicar
 
-1. **Fotografías propias** — las que hay ahora son de archivo, con licencia libre, y son
-   **de lugares, no de personas**: la cordillera del Tunari, la iglesia de Tiquipaya, un
-   mercado del valle y la plaza de Quillacollo. Es deliberado: poner fotos de niñas y
-   niños ajenos en el sitio de una organización real haría creer que son sus
-   beneficiarios. Cuando la organización tenga fotos propias (la escuela, el huerto, las
-   jornadas), hay que sustituirlas.
+1. **Fotografías propias** — sigue sin haber archivo fotográfico de la organización. Hay
+   dos bloques, todos de archivo, con licencia libre y reconocidos en su pie:
+   - **El valle** (18 fotos): lugares y paisajes de Cochabamba, Tiquipaya y alrededores.
+     Nunca personas. Es deliberado: poner fotos de niñas y niños ajenos en el sitio de una
+     organización real haría creer que son sus beneficiarios.
+   - **La labor** (5 fotos, marcadas «Imagen de archivo» en la página): manos, materiales
+     y un centro de salud rural. Ilustran *qué* se hace sin retratar a nadie — siguen sin
+     ser de SEMCA, y así lo dice cada pie y una nota en las dos páginas donde aparecen.
+   Cuando la organización tenga fotos propias (la escuela, el huerto, las jornadas), hay
+   que sustituir el segundo bloque, quitar su marca y la nota que lo explica.
 2. **Correo institucional** — se retiró `contacto@semca.org.bo` porque ese dominio no
    existe. Falta añadir el correo real (ver comentario `TODO` en `contacto.html`).
 3. **Formulario** — sigue siendo una demostración estática (solo muestra el aviso).
@@ -144,9 +148,10 @@ dominio final es otro.
 - Maqueta: [Editorial](https://html5up.net/editorial) de [HTML5 UP](https://html5up.net),
   [CCA 3.0](https://html5up.net/license). Reescrita sin dependencias.
 - Mapa: © colaboradores de [OpenStreetMap](https://www.openstreetmap.org/copyright).
-- Fotografías, todas de [Wikimedia Commons](https://commons.wikimedia.org) y
-  redimensionadas para la web (los recortes de encuadre los hace el navegador con
-  `object-fit`, los archivos no están alterados):
+- Fotografías de archivo, redimensionadas para la web (los recortes de encuadre los hace
+  el navegador con `object-fit`, los archivos no están alterados).
+
+  **El valle** — lugares y paisajes, de [Wikimedia Commons](https://commons.wikimedia.org):
 
   | Archivo | Foto | Autor | Licencia |
   |---|---|---|---|
@@ -168,6 +173,17 @@ dominio final es otro.
   | `img/tiraque.jpg` | [Tiraque, valle alto](https://commons.wikimedia.org/wiki/File:Tiraque_Cochabamba_01.jpg) | Das Morton | CC BY-SA 4.0 |
   | `img/adobe.jpg` | [Casas de adobe en Villa Mercedes](https://commons.wikimedia.org/wiki/File:Casas_de_adobe_en_Villa_Mercedes,_Arbieto,_2007.jpg) | Ramiro Lizárraga Terrazas | CC0 |
   | `img/textil.jpg` | [Tejido andino (tari)](https://commons.wikimedia.org/wiki/File:Tari_textil_Aymara.jpg) | Jhulis | CC BY-SA 4.0 |
+
+  **La labor** — marcadas «Imagen de archivo» en la página. **No son de SEMCA.** Se eligieron
+  a propósito sin rostros reconocibles: manos, materiales y un edificio.
+
+  | Archivo | Foto | Autor | Fuente | Licencia |
+  |---|---|---|---|---|
+  | `img/primera-infancia.jpg` | [Baby Hands](https://stocksnap.io/photo/baby-hands-AUXJX50V26) | Bady Qb | StockSnap.io | CC0 |
+  | `img/aprendizaje.jpg` | [Child Kid](https://stocksnap.io/photo/child-kid-X6077HDEQH) | Martin Vorel | StockSnap.io | CC0 |
+  | `img/alimentacion.jpg` | [Cooking Ingredients](https://stocksnap.io/photo/cooking-ingredients-573HXXCQWB) | Tim Sullivan | StockSnap.io | CC0 |
+  | `img/productos.jpg` | [Hands Rustic](https://stocksnap.io/photo/hands-rustic-7UZYSYUAX7) | Nordwood Themes | StockSnap.io | CC0 |
+  | `img/salud.jpg` | [Centro de Salud Puquio, Lomerio, Santa Cruz](https://commons.wikimedia.org/wiki/File:Centro_de_Salud_Puquio,_en_Lomerio,_Santa_Cruz,_Bolivia.jpg) | Julitatwa | Wikimedia Commons | CC BY-SA 4.0 |
 
   Las licencias CC BY y CC BY-SA exigen mantener el reconocimiento: **si se sustituye una
   foto, hay que actualizar también el pie de foto en la página y esta tabla.**
