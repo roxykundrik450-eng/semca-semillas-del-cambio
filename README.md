@@ -112,11 +112,30 @@ python -m http.server 8080
 
 ## Publicar
 
-Al ser un sitio estático, basta con servirlo desde la raíz del repositorio.
-Si se usa GitHub Pages: *Settings → Pages → Deploy from a branch → `main` / root*.
-Las URL de `sitemap.xml` y `robots.txt` están escritas para
-`https://roxykundrik450-eng.github.io/semca-semillas-del-cambio/`; ajústalas si el
-dominio final es otro.
+**Dominio de producción: <https://semcabolivia.org>**
+
+El sitio se publica en **Cloudflare Pages**, proyecto `semca-semillas-del-cambio`.
+El directorio `repo/` es la fuente; `sitemap.xml` y `robots.txt` ya apuntan al
+dominio propio. Para subir una versión nueva:
+
+```bash
+# 1. exportar solo lo rastreado por git (evita subir .git)
+git -C repo archive HEAD | tar -x -C .deploy
+
+# 2. desplegar con wrangler (instalado en deploytool/)
+CLOUDFLARE_API_TOKEN=... CLOUDFLARE_ACCOUNT_ID=e3b7def65ea1935bb79781be2ef89d89 \
+  node deploytool/node_modules/wrangler/bin/wrangler.js pages deploy .deploy \
+  --project-name=semca-semillas-del-cambio --branch=main --commit-dirty=true
+```
+
+> `wrangler pages deploy` con la salida en una tubería (`| tail`) hace que el
+> proceso termine con un código anómalo: redirige a un archivo y léelo después.
+
+**DNS** — el dominio está gestionado en Cloudflare (zone `semcabolivia.org`),
+con dos CNAME en modo *proxied* hacia `semca-semillas-del-cambio.pages.dev`
+(raíz y `www`), y ambos registrados como *custom domains* del proyecto Pages.
+
+El sitio también responde en `semca-semillas-del-cambio.pages.dev`.
 
 ## Pendientes antes de publicar
 
@@ -130,8 +149,11 @@ dominio final es otro.
      ser de SEMCA, y así lo dice cada pie y una nota en las dos páginas donde aparecen.
    Cuando la organización tenga fotos propias (la escuela, el huerto, las jornadas), hay
    que sustituir el segundo bloque, quitar su marca y la nota que lo explica.
-2. **Correo institucional** — se retiró `contacto@semca.org.bo` porque ese dominio no
-   existe. Falta añadir el correo real (ver comentario `TODO` en `contacto.html`).
+2. **Correo institucional** — el dominio `semcabolivia.org` ya está registrado, así que
+   la dirección natural es `contacto@semcabolivia.org`. Falta crear el buzón y añadir sus
+   registros MX en el DNS (el comentario `TODO` de `contacto.html` tiene la línea lista
+   para descomentar). **Importante: si se usa la raíz del dominio para el correo, no puede
+   seguir siendo un CNAME — hay que pasar la raíz a los registros que pida el proveedor.**
 3. **Formulario** — sigue siendo una demostración estática (solo muestra el aviso).
    Conectar a un servicio de envío (Formspree, Netlify Forms, etc.) o sustituirlo por
    WhatsApp/teléfono.

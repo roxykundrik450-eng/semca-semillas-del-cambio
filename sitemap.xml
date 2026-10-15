@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://semca-semillas-del-cambio.pages.dev/</loc>
+    <loc>https://semcabolivia.org/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://semca-semillas-del-cambio.pages.dev/nosotros.html</loc>
+    <loc>https://semcabolivia.org/nosotros</loc>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://semca-semillas-del-cambio.pages.dev/programas.html</loc>
+    <loc>https://semcabolivia.org/programas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://semca-semillas-del-cambio.pages.dev/actualidad.html</loc>
+    <loc>https://semcabolivia.org/actualidad</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://semca-semillas-del-cambio.pages.dev/galeria.html</loc>
+    <loc>https://semcabolivia.org/galeria</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://semca-semillas-del-cambio.pages.dev/preguntas.html</loc>
+    <loc>https://semcabolivia.org/preguntas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://semca-semillas-del-cambio.pages.dev/ayudar.html</loc>
+    <loc>https://semcabolivia.org/ayudar</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://semca-semillas-del-cambio.pages.dev/transparencia.html</loc>
+    <loc>https://semcabolivia.org/transparencia</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://semca-semillas-del-cambio.pages.dev/contacto.html</loc>
+    <loc>https://semcabolivia.org/contacto</loc>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
